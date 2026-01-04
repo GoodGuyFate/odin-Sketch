@@ -22,10 +22,18 @@ function createGrid(size) {
         item.addEventListener('mouseenter', changeBackgroundColor);
     }); 
 }
-   
+let currentMode = 'black';
 function changeBackgroundColor(e) {
-    e.target.style.backgroundColor = `black`;
+    if (currentMode === 'black') {
+        e.target.style.backgroundColor = 'black';
+    } else if (currentMode === 'rgb') {
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    }
 }
+
 
 const resetBtn = document.querySelector(".btn-reset")
 resetBtn.addEventListener("click", reset)
@@ -51,3 +59,32 @@ function promptSize() {
     createGrid(size)
 }
 
+const rgbBtn = document.querySelector('.btn-rgb');
+const colors = [
+  '#FF0000', // Red
+  '#FF7F00', // Orange
+  '#FFFF00', // Yellow
+  '#00FF00', // Green
+  '#0000FF', // Blue
+  '#4B0082', // Indigo
+  '#9400D3'  // Violet
+];
+let colorIndex = 0;
+
+function changeColor() {
+  rgbBtn.style.backgroundColor = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+
+setInterval(() => {
+    changeColor()
+}, 2000);
+
+rgbBtn.addEventListener("click", () => {
+    currentMode = "rgb"
+})
+
+const blackBtn = document.querySelector(".btn-black")
+blackBtn.addEventListener("click", () => {
+    currentMode = "black"
+})
