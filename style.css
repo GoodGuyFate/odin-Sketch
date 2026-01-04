@@ -12,6 +12,7 @@
 html,
 body {
     height: 100%;
+    background-color: #696d7d;
 }
 
 
@@ -20,38 +21,42 @@ body {
     justify-content: center;
 }
 
+.title-item {
+    color: #f0f0f0;
+    font-size: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .button-container {
     display: flex;
+    gap: 10px;
     justify-content: center;
 }
 
 .row-container {
     display: flex;
-    justify-content: center;
+    flex: 1;
     width: 100%;
-    /* border: solid red 2px; */
 }
 
 .grid-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    /* border: solid orange 2px; */
-    
+    flex-direction: column;
+    width: 960px;
+    height: 960px;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
 .button-item {
     padding: 3px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .grid-item {
-    display: flex;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
+    flex: 1;
+    height: 100%;
     background-color: grey;
-    border: 1px solid black
-    
 }
 
