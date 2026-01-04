@@ -51,8 +51,10 @@ gridSizeBtn.addEventListener("click", promptSize)
 
 function promptSize() {
     let val = prompt("Enter a grid size between 1 and 100: ")
+    if (val == null) {
+        return
+    }
     let size = parseInt(val)
-
     if (isNaN(size) || size <= 0 || size > 100) {
         return alert("Invalid Input")
     }
