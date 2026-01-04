@@ -9,15 +9,49 @@
     padding: 0;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+
 .title-container {
     display: flex;
     justify-content: center;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.row-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* border: solid red 2px; */
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    /* border: solid orange 2px; */
+    
+}
+
+.button-item {
+    padding: 3px;
+}
+
 .grid-item {
     display: flex;
+    flex-shrink: 0;
     width: 100px;
     height: 100px;
     background-color: grey;
-    border: 2px solid black
+    border: 1px solid black
+    
 }
+
